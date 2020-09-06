@@ -8,9 +8,10 @@ import {
 import SkiiImage from '../assets/ski.png'
 
 export default function CategoryListItem(props) {
+    const { category } = props
     return (
     <View style ={styles.container} >
-        <Text style ={styles.title} > Category List Item </Text>
+        <Text style ={styles.title} > {category.name} </Text>
         <Image  style ={styles.categoryImage} source={SkiiImage}/>
     </View>
     );
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 10,
         shadowOffset: { width: 0, height: 0},
+        marginBottom: 16
     },
     categoryImage: {
         width: 64,
