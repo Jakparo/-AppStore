@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, ScrollView, View } from 'react-native';
 import CategoryListItem from './components/CategoryListItem'
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <CategoryListItem/>
+    <View >
+      <ScrollView style={{paddingLeft: 16, paddingRight: 16}} 
+      contentContainerStyle={{backgroundColor: '#FFF'}} >
+        <CategoryListItem/>
+        <CategoryListItem/>
+        <CategoryListItem/>
+        <CategoryListItem/>
+        <CategoryListItem/>
+        <CategoryListItem/>
+      </ScrollView>
     </View>
   );
 }
@@ -15,9 +24,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'stretch',
     backgroundColor: '#fff',
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
-    paddingLeft: 16,
-    paddingRight: 16
+    marginLeft: 16,
+    marginRight: 16
   },
 });
