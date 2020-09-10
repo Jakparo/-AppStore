@@ -1,24 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, ScrollView, View, FlatList } from 'react-native';
-import CategoryListItem from './components/CategoryListItem'
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
-  this.state = {
-    categories: [
-      {id: 1, name: "Dụng cụ trượt tuyết"},
-      {id: 2, name: "Dụng cụ trượt tuyết"},
-      {id: 3, name: "Kính mũ"}
-    ]
-  };
-  const {categories} = this.state
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Categories from './screens/Categories';
+import Category from './screens/Category';
+
+const  Stack =  createStackNavigator();
+
+export default function App() {  
   return (
-    <FlatList
-      data={categories}
-      renderItem={({ item }) => <CategoryListItem category ={item}/>}
-      keyExtractor = {item => `${item.id}`}
-      contentContainerStyle={{paddingLeft: 16, paddingRight: 16}}
-    />  
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name ='Categories' component={Categories}/>
+        <Stack.Screen name ='Category' component={Category}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
