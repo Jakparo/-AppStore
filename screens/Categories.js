@@ -18,7 +18,9 @@ export default function Categories({navigation}) {
     <FlatList
         data={categories}   
         renderItem={({ item }) => <CategoryListItem
-            category ={item} onPress={()=> navigation.navigate('Category')}/>
+            category ={item} onPress={()=> navigation.navigate('Category', {
+                name: item.name
+            })}/>
         }
         keyExtractor = {item => `${item.id}`}
         contentContainerStyle={styles.container}

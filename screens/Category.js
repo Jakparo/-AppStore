@@ -13,6 +13,8 @@ export default function Category() {
     );
 }
 
+
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

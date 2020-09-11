@@ -15,7 +15,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name ='Categories' component={Categories}/>
-        <Stack.Screen name ='Category' component={Category}/>
+        <Stack.Screen name ='Category' component={Category}
+          options={({ route }) => ({ title: route.params.name })}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -26,7 +27,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'stretch',
     backgroundColor: '#fff',
-    // alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 16,
     marginRight: 16
