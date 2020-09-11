@@ -1,16 +1,16 @@
 import React from 'react'
 import {
     Image, TouchableOpacity,
-    Text, Alert,
+    Text,
     View, StyleSheet
 } from 'react-native'
 
 import SkiiImage from '../assets/ski.png'
 
 export default function CategoryListItem(props) {
-    const { category } = props
+    const { category, onPress } = props;
     return (
-        <TouchableOpacity onPress={()=> Alert.alert('Click!!!')}>
+        <TouchableOpacity onPress={onPress}>
             <View style ={styles.container} >
                 <Text style ={styles.title} > {category.name} </Text>
                 <Image  style ={styles.categoryImage} source={SkiiImage}/>

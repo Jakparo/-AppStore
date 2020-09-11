@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, FlatList } from 'react-native';
 import CategoryListItem from '../components/CategoryListItem'
 
-export default function Categories() {
+export default function Categories({navigation}) {
     this.state = {
         categories: [
             {id: 1, name: "Dụng cụ trượt tuyết"},
@@ -11,13 +11,17 @@ export default function Categories() {
             {id: 3, name: "Kính mũ"}
         ]
     };  
-    const {categories} = this.state
+
+    const {categories} = this.state;
+
     return (
     <FlatList
-        data={categories}
-        renderItem={({ item }) => <CategoryListItem category ={item}/>}
+        data={categories}   
+        renderItem={({ item }) => <CategoryListItem
+            category ={item} onPress={()=> navigation.navigate('Category')}/>
+        }
         keyExtractor = {item => `${item.id}`}
-        contentContainerStyle={{paddingLeft: 16, paddingRight: 16}}
+        contentContainerStyle={styles.container}
     />  
     );
 }
@@ -27,9 +31,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'stretch',
         backgroundColor: '#fff',
-        // alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: 16,
-        marginRight: 16
+        paddingLeft: 16, 
+        paddingRight: 16
     },
 });

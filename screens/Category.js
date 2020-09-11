@@ -5,9 +5,11 @@ import { StyleSheet, View, Text} from 'react-native';
 
 export default function Category() {
     return (
+        <View>
             <Text>
                 Category
-            </Text>  
+            </Text>
+        </View>
     );
 }
 
@@ -16,7 +18,6 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'stretch',
         backgroundColor: '#fff',
-        // alignItems: 'center',
         justifyContent: 'center',
         marginLeft: 16,
         marginRight: 16
